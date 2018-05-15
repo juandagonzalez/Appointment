@@ -16,39 +16,43 @@
 
 	<header>
 		<img id="logo" src="./imgs/APPointment.png" alt="APPointment">
-		<img id="logo" src="./imgs/Account.png" alt="APPointment">
-	</header>	
-	<nav>
-		<div class="container row">
-			<div class="col-sm-12 col-md-12 col-lg-6">
+		<img id="account" src="./imgs/Account.png" alt="Account">
+	</header>
+
+	<main>
+	<nav id="hidding">
+		<div class="container">
+			<div class="navCont">
 				<h3>LOGIN</h3>
-				<div id="navLogIn" class="login">
-					<input id="eMailAddressInput" type="txt" name="eMailAddress" placeholder="enter your e-mail"><br>
+				<div id="navLogIn">
+					<input id="emailAddressInput" type="txt" name="emailAddress" placeholder="enter your e-mail"><br>
 					<input id="passwordInput" type="txt" name="passwordAddress" placeholder="enter your password">
 				</div>
-				<button type="button" class="btn btn-primary">Log in</button>
+				<button type="button">Log in</button>
 			</div>
-			<div class="navCont1 col-sm-12 col-md-12 col-lg-6">
+			<div class="navCont">
 				<h3>REGISTER</h3>
-				<div id="navSignIn" class="login">
-					<input id="firstNameInput" type="txt" name="firstName" placeholder="First name"><br>
-					<input id="lastNameInput" type="txt" name="lastName" placeholder="Last name"><br>
-					<input id="eMailAddressInput" type="txt" name="eMailAddress" placeholder="E-mail"><br>
-					<input id="passwordInput" type="txt" name="passwordAddress" placeholder="Password">
+				<div id="navSignIn">
+					<input id="nameInput" type="txt" name="firstName" placeholder="First name"><br>
+					<input id="emailAddressInput" type="txt" name="emailAddress" placeholder="E-mail"><br>
+					<input id="passwordInput" type="txt" name="password" placeholder="Password">
 				</div>
-				<button type="button" class="btn btn-primary">Sign in</button>
+				<button type="button">Sign in</button>
 			</div>
 		</div>
 	</nav>
-	<section id="columnsContainer" class="row">
-		<article id="column1" class="col-sm-12 col-md-12 col-lg-8">
+	<section id="columnsContainer">
+		<article id="column1">
 			<div class="bannContainer">
-				<img id="Banner" src="./imgs/banner.png" alt="Banner">
+				<picture id="banner" >
+						<source srcset="./imgs/bannerPeq.png" media="(max-width: 768px)" alt="Banner">
+					<img src="./imgs/banner.png" alt="Banner">
+				</picture>
 			</div>
 		</article>
-		<aside id="column2" class="col-sm-12 col-md-12 col-lg-4">
+		<aside id="column2">
 			<h2>Get started</h2>
-			<input id="addressInput" type="txt" name="address" placeholder="enter your address">
+			<input id="addressInput" type="txt" name="address" placeholder="enter your address"><br>
 			<select class="box">
 				<option>
 						Barbershops
@@ -58,9 +62,11 @@
 				</option>
 				<option>
 						Spa
-				</option>
-			</select>
-			<button type="button" class="btn btn-primary btnCol2">Find Services</button>
+				</option> 
+			</select><br>
+			<button type="button">Find Services</button>
 		</aside>
 	</section>
+	</main>
 	<footer>Copyright &copy;</footer>
+</body>

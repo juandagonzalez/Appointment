@@ -1,0 +1,87 @@
+header {
+  background: black;
+  grid-template-rows: minmax(200px, 1fr);
+  -webkit-box-shadow: 0px 5px 5px black;
+  box-shadow: 0px 5px 5px black; }
+  header #logo {
+    max-width: 200px;
+    padding: 15px;
+    margin-left: 30px; }
+  header #account {
+    max-height: 70px;
+    padding-right: 15px;
+    padding-top: 40px;
+    margin-right: 30px;
+    float: right; }
+
+body {
+  margin: 0 auto;
+  grid-area: auto;
+  background: #3f3f3f; }
+  body nav {
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    background: #4ca0ff;
+    padding-bottom: 30px;
+    -webkit-box-shadow: 0px 5px 5px black;
+    box-shadow: 0px 5px 5px black; }
+    body nav .container {
+      grid-template-columns: 1fr;
+      display: grid; }
+    @media screen and (min-width: 760px) {
+      body nav .container {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid; } }
+    body nav h3 {
+      color: black; }
+  body input {
+    padding: 5px;
+    margin-bottom: 5px; }
+  body button {
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 5px 5px #004797;
+    box-shadow: 0px 5px 5px #004797; }
+  body button:hover {
+    background: #4ca0ff;
+    border: 2px solid black;
+    color: black; }
+  body button:active {
+    background: #004797;
+    border: 2px solid black;
+    color: white;
+    -webkit-box-shadow: 0px 5px 5px #004797;
+    box-shadow: 0px 5px 5px #004797; }
+  body main #columnsContainer {
+    text-align: center;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    display: grid;
+    -webkit-box-shadow: 0px 5px 5px #004797;
+    box-shadow: 0px 5px 5px #004797; }
+  @media screen and (min-width: 760px) {
+    body main #columnsContainer {
+      grid-template-columns: repeat(2, 1fr);
+      display: grid; } }
+  body main #column1 {
+    margin: 0 auto;
+    border: none; }
+  body main #column1:hover {
+    margin: 0 auto;
+    border: 2px solid #4ca0ff; }
+  body main #column2 {
+    background: #5fa5f5;
+    text-align: center;
+    padding: 25px;
+    padding-bottom: 40px; }
+    body main #column2 h2 {
+      font-size: 30px; }
+    body main #column2 .box {
+      margin-bottom: 10px; }
+  body footer {
+    background: #4ca0ff;
+    text-align: center;
+    padding: 10px; }

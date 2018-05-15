@@ -1,0 +1,128 @@
+header{
+    background: black;
+    grid-template-rows: minmax(200px, 1fr);
+    box-shadow: 0px 5px 5px black;
+
+    #logo{
+        max-width: 200px;
+        padding: 15px;
+        margin-left: 30px;
+
+    }
+    #account{
+        max-height: 70px;
+        padding-right: 15px;
+        padding-top: 40px;
+        margin-right: 30px;
+        float: right;
+    }
+}
+
+body{
+    margin: 0 auto;
+    grid-area: auto;
+    background: rgb(63, 63, 63);
+
+    nav{
+        padding: 10px;
+        margin: 0 auto;
+        text-align: center;
+        background:#4ca0ff;
+        padding-bottom: 30px;
+        box-shadow: 0px 5px 5px black;
+
+        .container{
+            grid-template-columns: 1fr;
+            display: grid;
+        }
+
+        @media screen and (min-width: 760px){
+            .container{
+                grid-template-columns: repeat(2, 1fr);
+                display: grid;
+            }
+        }
+
+            h3{
+                color: black;
+            }
+    }
+
+     input{
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    button{
+        background: black;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 5px 5px #004797;
+    }
+
+    button:hover{
+            background: #4ca0ff;
+            border: 2px solid black;
+            color: black;
+    }
+
+    button:active{
+        background: #004797;
+        border: 2px solid black;
+        color: white;
+        box-shadow: 0px 5px 5px #004797;
+    }
+    
+    main{
+
+        #columnsContainer{
+            text-align: center;
+            margin: 0 auto;
+            grid-template-columns: 1fr;
+            display: grid;
+            box-shadow: 0px 5px 5px #004797;
+        }
+
+        @media screen and (min-width: 760px){
+            #columnsContainer{
+                grid-template-columns: repeat(2, 1fr);
+                display: grid;
+            }
+        }
+
+        #column1{
+            margin: 0 auto;
+            border: none;
+        }
+
+        #column1:hover{
+            margin: 0 auto;
+            border: 2px solid #4ca0ff;
+        }
+
+        #column2{
+            background: #5fa5f5;
+            text-align: center;
+            padding: 25px;
+            padding-bottom: 40px;
+            
+            h2{
+                font-size: 30px;
+            }
+
+            .box{
+                margin-bottom: 10px;
+            }
+
+        }
+
+    }
+
+    footer{
+        background: #4ca0ff;
+        text-align: center;
+        padding: 10px;
+    }
+
+}

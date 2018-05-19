@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport')
-const jwt = require ('jsonwebtoken')
-
-const User = require('../model/user')
+const passport = require('passport');
+const jwt = require ('jsonwebtoken');
+const config = require ('../config/database');
+const User = require('../models/user');
 
 //Register
 router.post('/register', (req, res, next) => {
@@ -22,14 +22,43 @@ User.addUser (newUser, (err,user) =>{
     });
 });
 
-//Authentication
-router.post('/authentication', (req, res, next) => {
-    res.send('AUTHENTICATION');
+//Authenticate
+router.post('/authenticate', (req, res, next) => {
+    const name = req.body.name;
+    const password = req.body.password;
+
+    User.getUserByName(name, (err, user) => {
+        if(err) throw err;
+        if(!user){
+            return res.json({success: false  , msg: 'User not found'});
+        };
+        
+        User.comparePassword (password, user.password, (err, pssMatch) => {
+            if(err) throw err;
+            if(pssMatch){
+                const token = jwt.sign (user.toJSON(), config.secret, {
+                    expiresIn: 300000
+                });
+
+                res.json({
+                    success: true,
+                    token: 'JWT' +token,
+                    user: {
+                        id: user.id,
+                        name: user.name,
+                        email: user.email
+                    }
+                });
+            }else {
+                return res.json({success: false, msg: 'wrong password'});
+            }
+        });
+    });
 });
 
 //Profile
-router.get('/profile', (req, res, next) => {
-    res.send('PROFILE');
+router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
+    res.json({user: req.user});
 });
 
 module.exports = router;
